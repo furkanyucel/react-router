@@ -1,25 +1,19 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import "./PublicNav.css"
 
 const Root = () => {
-  const navStyle = {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '2rem',
-    listStyleType: 'none',
-    padding: '0',
-  };
 
   return (
     <Fragment>
       <nav>
-        <ul style={navStyle}>
+        <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" className={({isActive}) => (isActive ? "active" : undefined)} >Home</NavLink>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <NavLink to="/products" className={({isActive}) => (isActive ? "active" : undefined)} >Products</NavLink>
           </li>
         </ul>
       </nav>
